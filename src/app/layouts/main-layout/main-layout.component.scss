@@ -1,5 +1,5 @@
 .content {
-  padding: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding-top: 0; // El navbar es fixed, así que no necesitamos padding-top extra
+  margin: 0;
+  width: 100%;
 }

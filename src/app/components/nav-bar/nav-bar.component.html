@@ -1,10 +1,23 @@
 <nav class="navbar">
   <div class="navbar-container">
-    <a class="navbar-brand" routerLink="/">Gen3i</a>
+    <!-- Logo -->
+    <a class="navbar-brand" href="#inicio">
+      <img src="assets/img/logo.png" alt="Gen3i" class="logo">
+    </a>
 
-    <div class="navbar-menu">
-      <a class="navbar-item" routerLink="/home" routerLinkActive="active">Inicio</a>
-      <!-- Agrega aquí más enlaces según sea necesario -->
+    <!-- Hamburger menu button for mobile -->
+    <button class="navbar-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation menu -->
+    <div class="navbar-menu" [class.active]="isMobileMenuOpen">
+      <a class="navbar-item" href="#quienes-somos" (click)="scrollToSection('quienes-somos')">Quiénes somos</a>
+      <a class="navbar-item" href="#servicios" (click)="scrollToSection('servicios')">Servicios</a>
+      <a class="navbar-item" href="#experiencia" (click)="scrollToSection('experiencia')">Experiencia</a>
+      <a class="navbar-item navbar-contact-btn" href="#contacto" (click)="scrollToSection('contacto')">Contacto</a>
     </div>
   </div>
 </nav>
