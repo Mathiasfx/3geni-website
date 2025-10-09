@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import './styles/variables';
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900&family=Syne:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -10,7 +8,7 @@
 }
 
 body {
-  font-family: $font-body, 'Poppins', sans-serif;
+  font-family: $font-body, sans-serif;
   line-height: 1.6;
   color: #374151;
   background-color: #fafafa;
