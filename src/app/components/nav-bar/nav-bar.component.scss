@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import '../../../styles/variables';
 
 .navbar {
   background-color: #E5E5E5;
@@ -91,7 +92,7 @@
   }
 
   &.active {
-    color: #6D28D9;
+    color: $purple-dark;
     font-weight: 600;
   }
 
@@ -103,7 +104,7 @@
     height: 2px;
     bottom: -2px;
     left: 0;
-    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    background: $purple;
     transition: width 0.3s ease;
   }
 
@@ -112,7 +113,7 @@
   }
 
   &.navbar-contact-btn {
-    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    background: $purple;
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
@@ -122,14 +123,14 @@
     border: none;
 
     &:hover {
-      background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
+      background: $purple-dark;
       color: white;
       transform: translateY(-1px);
-      box-shadow: 0 3px 8px rgba(139, 92, 246, 0.25);
+      box-shadow: $purple;
     }
 
     &.active {
-      background: linear-gradient(135deg, #6D28D9 0%, #5B21B6 100%);
+      background: $purple;
       color: white;
     }
   }
