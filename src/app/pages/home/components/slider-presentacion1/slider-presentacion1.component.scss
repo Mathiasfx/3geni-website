@@ -211,7 +211,7 @@
     .tag {
       background-color: $yellow;
       color: $purple-dark;
-      font-family: 'Fraunces Black', serif; /* Especificando directamente Fraunces Black */
+      font-family: 'Fraunces', serif; /* Usando la familia Fraunces */
       font-weight: 900; /* Peso Black es 900 */
       font-size: 2.2rem;
       padding: 0.1rem 0.8rem;
@@ -326,7 +326,7 @@
   }
 
   .text-content {
-    flex: 0 1 45%;
+    flex: 0 1 50%; // Aumentamos ligeramente el ancho para dar más espacio
     position: relative;
     z-index: 2;
     display: flex;
@@ -380,7 +380,7 @@
     .tag {
       background-color: $yellow;
       color: $purple-dark;
-      font-family: 'Fraunces Black', serif; /* Especificando directamente Fraunces Black */
+      font-family: 'Fraunces', serif; /* Usando la familia Fraunces */
       font-weight: 900; /* Peso Black es 900 */
       font-size: 2.2rem;
       padding: 0.1rem 0.8rem;
@@ -389,10 +389,12 @@
       display: inline-block;
       line-height: 1.2;
       text-align: right; // Alinea el texto a la derecha
+      white-space: nowrap; // Evita que el texto tenga saltos de línea
 
       @media (max-width: $breakpoint-md) {
         font-size: 1.8rem;
         text-align: center;
+        white-space: normal; // En móviles permitimos que se ajuste si es necesario
       }
 
       @media (max-width: $breakpoint-sm) {
