@@ -6,18 +6,18 @@
     </a>
 
     <!-- Hamburger menu button for mobile -->
-    <button class="navbar-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+    <button class="navbar-toggle" (click)="toggleMobileMenu($event)" [class.active]="isMobileMenuOpen">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
     <!-- Navigation menu -->
-    <div class="navbar-menu" [class.active]="isMobileMenuOpen">
-      <a class="navbar-item" href="#quienes-somos" (click)="scrollToSection('quienes-somos')">Quiénes somos</a>
-      <a class="navbar-item" href="#servicios" (click)="scrollToSection('servicios')">Servicios</a>
-      <a class="navbar-item" href="#experiencia" (click)="scrollToSection('experiencia')">Experiencia</a>
-      <a class="navbar-item navbar-contact-btn" href="#contacto" (click)="scrollToSection('contacto')">Contacto</a>
+    <div class="navbar-menu" [class.active]="isMobileMenuOpen" (click)="$event.stopPropagation()">
+      <a class="navbar-item" href="#quienes-somos" (click)="scrollToSection('quienes-somos'); $event.preventDefault()">Quiénes somos</a>
+      <a class="navbar-item" href="#servicios" (click)="scrollToSection('servicios'); $event.preventDefault()">Servicios</a>
+      <a class="navbar-item" href="#experiencia" (click)="scrollToSection('experiencia'); $event.preventDefault()">Experiencia</a>
+      <a class="navbar-item navbar-contact-btn" href="#contacto" (click)="scrollToSection('contacto'); $event.preventDefault()">Contacto</a>
     </div>
   </div>
 </nav>
