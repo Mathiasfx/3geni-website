@@ -1,0 +1,468 @@
+@import '../../../../../styles/variables';
+
+.estrategias-container {
+  background-color: $purple-light;
+  width: 100%;
+  height: 460px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: $breakpoint-md) {
+    height: auto;
+    min-height: 500px;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    min-height: 400px;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column-reverse;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      gap: 2rem;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  .text-content {
+    flex: 0 1 45%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    @media (max-width: $breakpoint-md) {
+      flex-basis: 100%;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    .title {
+      color: $blue-dark;
+      font-size: 2.8rem;
+
+      margin-top: 0;
+      font-family: $font-heading;
+      font-weight: 700;
+      line-height: 1.2;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 2.4rem;
+        text-align: center;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: 2rem;
+      }
+    }
+
+    .subtitle {
+      color: $blue-dark;
+      font-size: 2.2rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      font-family: $font-heading;
+      font-weight: 500;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: 1.5rem;
+      }
+
+      &.alternate-font {
+        font-family: $font-body; // 'Syne', sans-serif
+        font-weight: 400;
+      }
+    }
+  }
+
+  .image-container {
+    flex: 0 1 50%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+
+    @media (max-width: $breakpoint-md) {
+      order: 1;
+      text-align: center;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    img {
+      max-height: 400px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+
+      @media (max-width: $breakpoint-md) {
+        height: auto;
+        width: 100%;
+        max-height: 300px;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        max-height: 250px;
+      }
+    }
+  }
+}
+
+// Nueva sección de federalismo
+.federalismo-container {
+  background-color: $purple-dark;
+  width: 100%;
+  height: 580px; /* Aumentado para mejor cobertura */
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: $breakpoint-md) {
+    height: auto;
+    min-height: 500px;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    min-height: 400px;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 100%;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: visible;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      text-align: center;
+      gap: 0;
+      padding: 0;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 0;
+    }
+
+    .left-side {
+      flex: 0 1 33%;
+      background-color: #2A8C8C;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      position: relative;
+      height: 100%;
+      overflow: visible;
+      margin: 0;
+      padding: 0;
+      align-self: stretch; /* Asegura que se estire completamente */
+
+      /* Truco para extender el color más allá de sus límites */
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -9999px;
+        width: 10000px;
+        height: 100%;
+        background-color: #2A8C8C;
+        z-index: 0;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        flex-basis: 100%;
+        width: 100%;
+        order: 1;
+        height: 380px; /* Más alto en móvil */
+      }
+    }
+  }
+
+  .text-content {
+    flex: 0 1 52%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 2rem 3rem;
+    margin-left: auto; /* Alinea a la derecha */
+
+    @media (max-width: $breakpoint-md) {
+      flex-basis: 100%;
+      margin-top: 0;
+      align-items: center;
+      order: 2;
+      padding: 2rem 1.5rem;
+    }
+
+    .subtitle-small {
+      color: $purple-light;
+      font-size: 1.6rem;
+      text-align: right;
+      margin-top: 5rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      font-family: $font-body;
+      font-weight: 400;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 1.4rem;
+        text-align: center;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: 1.2rem;
+      }
+    }
+
+    .title {
+      color: $purple-light;
+      font-size: 2.6rem;
+      text-align: right;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      font-family: $font-heading;
+      font-weight: 700;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 2.2rem;
+        text-align: center;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .underline {
+      height: 2px;
+      background-color: $purple-light;
+      width: 70%;
+      margin-top: 0.5rem;
+      align-self: flex-end;
+
+      @media (max-width: $breakpoint-md) {
+        align-self: center;
+        width: 80%;
+      }
+    }
+  }
+
+  .image-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    overflow: visible;
+    z-index: 1;
+
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+      justify-content: center;
+      height: 100%;
+    }
+
+    img {
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border: none;
+      max-width: none;
+      max-height: 580px; /* Controla altura máxima */
+
+      @media (max-width: $breakpoint-md) {
+        height: 100%;
+        width: 100%;
+        object-position: center;
+        max-height: 380px;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        height: 100%;
+      }
+    }
+  }
+}
+
+// Nueva sección "Acompañamos a empresas"
+.acompanamos-container {
+  background-color: $light-bg;
+  width: 100%;
+  height: 530px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+
+  @media (max-width: $breakpoint-md) {
+    height: auto;
+    min-height: 500px;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    min-height: 400px;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column-reverse;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      gap: 2rem;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  .text-content {
+    flex: 0 1 55%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-right: 2rem;
+
+    @media (max-width: $breakpoint-md) {
+      flex-basis: 100%;
+      margin-top: 1rem;
+      align-items: center;
+      padding-right: 0;
+    }
+
+    .title-destacado {
+      color: $purple-dark;
+      font-size: 2.8rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      font-family: $font-heading;
+      font-weight: 700;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 2.2rem;
+        text-align: center;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .description {
+      color: $purple;
+      font-size: 1.6rem;
+      margin-top: 0;
+      line-height: 1.5;
+      font-family: $font-body;
+      font-weight: 400;
+      max-width: 90%;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 1.4rem;
+        text-align: center;
+        max-width: 100%;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .image-container {
+    flex: 0 1 50%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+
+    @media (max-width: $breakpoint-md) {
+      order: 1;
+      text-align: center;
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    img {
+      max-height: 500px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+
+      @media (max-width: $breakpoint-md) {
+        height: auto;
+        width: 100%;
+        max-height: 300px;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        max-height: 250px;
+      }
+    }
+  }
+}

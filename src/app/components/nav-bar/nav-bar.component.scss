@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import '../../../styles/variables';
+
 .navbar {
-  background-color: #333;
-  color: white;
-  padding: 1rem 0;
+  background-color: #E5E5E5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
   width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 120px;
+  transition: all 0.3s ease;
 }
 
 .navbar-container {
@@ -12,28 +19,185 @@
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  height: 120px;
 }
 
 .navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  .logo {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+
+  span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+  }
+
+  &.active {
+    span:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+  }
 }
 
 .navbar-menu {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 2rem;
 }
 
 .navbar-item {
-  color: #ddd;
+  color: #6B7280;
   text-decoration: none;
-  transition: color 0.3s ease;
-  font-size: 1rem;
-  
-  &:hover, &.active {
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    color: #374151;
+  }
+
+  &.active {
+    color: $purple-dark;
+    font-weight: 600;
+  }
+
+  // Efecto hover underline
+  &:not(.navbar-contact-btn)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: $purple;
+    transition: width 0.3s ease;
+  }
+
+  &:not(.navbar-contact-btn):hover::after {
+    width: 100%;
+  }
+
+  &.navbar-contact-btn {
+    background: $purple;
     color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    border: none;
+
+    &:hover {
+      background: $purple-dark;
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: $purple;
+    }
+
+    &.active {
+      background: $purple;
+      color: white;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+    z-index: 1001; // Asegurar que el botón siempre esté por encima
+  }
+
+  .navbar-menu {
+    position: fixed; // Cambiado a fixed para mejor comportamiento móvil
+    top: 120px; // Ajustado para que aparezca justo debajo del navbar
+    left: 0;
+    right: 0;
+    background: #E5E5E5;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 1rem 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-20px); // Pequeño offset para la animación
+    opacity: 0;
+    pointer-events: none; // Evitar interacción cuando está oculto
+    transition: all 0.3s ease;
+    z-index: 999;
+    max-height: calc(100vh - 120px); // Limitar altura al viewport menos la altura del navbar
+    overflow-y: auto; // Permitir scroll si el menú es muy largo
+
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto; // Permitir interacción cuando está visible
+    }
+  }
+
+  .navbar-item {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #F3F4F6;
+    text-align: center; // Centrar texto para mejor apariencia en móvil
+    display: block; // Asegurar que ocupa todo el ancho disponible
+    width: 100%; // Ocupar todo el ancho disponible
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.navbar-contact-btn {
+      margin: 1rem 1.5rem 0.5rem;
+      text-align: center;
+      border-radius: 25px;
+      border-bottom: none;
+      display: inline-block; // Permitir que el botón mantenga su forma
+      width: auto; // Permitir que el botón tenga su ancho natural
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 1rem;
+    height: 120px;
+  }
+
+  .navbar-brand .logo {
+    height: 35px;
   }
 }
