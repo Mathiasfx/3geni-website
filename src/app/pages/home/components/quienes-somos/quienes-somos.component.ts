@@ -12,7 +12,7 @@ export class QuienesSomosComponent {
   equipo = [
     {
       nombre: 'Norma Simonit',
-      cargo: 'DIRECTORA GENERAL',
+      cargo: 'DIRECTORA GEN3i',
       foto: 'assets/img/norma.png',
       descripcion:
         'Consultora en igualdad de género y sostenibilidad, lidera Género 3i. Más de 30 años de experiencia en los sectores público y privado. Especialista en diseño e implementación de estrategias promotoras de equidad, innovación y desarrollo sostenible.',
@@ -22,7 +22,7 @@ export class QuienesSomosComponent {
         'Programa de Liderazgo (UTDT).',
       ],
       experiencia: [
-        'Fue consultora generalista del Programa VALOR BID AMIA, donde ha desarrollado programas e intervenciones para compañías internacionales.',
+        'Fue consultora generalista del Programa VALOR BID AMIA ,donde ha desarrollado programas de inversión social para compañías internacionales.',
         'Desde 2019 asesora a empresas, organizaciones de la sociedad civil y entes de gobierno promoviendo alianzas y articulación público privada para estrategias de triple impacto positivo.',
       ],
     },
