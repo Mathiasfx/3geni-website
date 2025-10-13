@@ -1,0 +1,91 @@
+<div class="quienes-somos-container">
+  <div class="content-wrapper">
+    <div class="titulo-seccion">
+      <h2>Somos expertos y expertas especialistas en impulsar transformaciones positivas</h2>
+      <h3>para la organización, gobierno y comunidad.</h3>
+    </div>
+
+    <div class="equipo-container">
+      <!-- Norma ocupa dos columnas con distribución específica -->
+      <div class="miembro destacado-norma" *ngIf="equipo[0]">
+        <div class="columna-izquierda">
+          <div class="foto-container">
+            <img [src]="equipo[0].foto" [alt]="equipo[0].nombre">
+            <div class="decoracion">
+              <div class="flor flor-1"></div>
+              <div class="flor flor-2"></div>
+              <div class="estrella"></div>
+            </div>
+          </div>
+
+          <div class="info-basica">
+            <h3 class="nombre">{{ equipo[0].nombre }}</h3>
+            <h4 class="cargo">{{ equipo[0].cargo }}</h4>
+            <p class="descripcion">{{ equipo[0].descripcion }}</p>
+          </div>
+        </div>
+
+        <div class="columna-derecha">
+          <div class="formacion" *ngIf="equipo[0].formacion && equipo[0].formacion.length > 0">
+            <p *ngFor="let item of equipo[0].formacion">{{ item }}</p>
+          </div>
+
+          <div class="experiencia" *ngIf="equipo[0].experiencia && equipo[0].experiencia.length > 0">
+            <p *ngFor="let item of equipo[0].experiencia">{{ item }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paula ocupa un renglón completo con formato 50/50 -->
+      <div class="miembro destacado-horizontal" *ngIf="equipo[1]">
+        <div class="contenido-horizontal">
+          <div class="foto-container">
+            <img [src]="equipo[1].foto" [alt]="equipo[1].nombre">
+          </div>
+
+          <div class="info">
+            <h3 class="nombre">{{ equipo[1].nombre }}</h3>
+            <h4 class="cargo">{{ equipo[1].cargo }}</h4>
+
+            <p class="descripcion">{{ equipo[1].descripcion }}</p>
+
+            <div class="formacion" *ngIf="equipo[1].formacion && equipo[1].formacion.length > 0">
+              <p *ngFor="let item of equipo[1].formacion">{{ item }}</p>
+            </div>
+
+            <div class="experiencia" *ngIf="equipo[1].experiencia && equipo[1].experiencia.length > 0">
+              <p *ngFor="let item of equipo[1].experiencia">{{ item }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resto del equipo -->
+      <div class="miembro" *ngFor="let persona of equipo.slice(2)">
+        <div class="foto-container">
+          <img [src]="persona.foto" [alt]="persona.nombre">
+          <div class="decoracion">
+            <div class="flor flor-1"></div>
+            <div class="flor flor-2"></div>
+            <div class="estrella"></div>
+          </div>
+        </div>
+
+        <div class="info">
+          <h3 class="nombre">{{ persona.nombre }}</h3>
+          <h4 class="cargo">{{ persona.cargo }}</h4>
+
+          <p class="descripcion">{{ persona.descripcion }}</p>
+
+          <div class="formacion" *ngIf="persona.formacion && persona.formacion.length > 0">
+            <p *ngFor="let item of persona.formacion">{{ item }}</p>
+          </div>
+
+          <div class="experiencia" *ngIf="persona.experiencia && persona.experiencia.length > 0">
+            <p *ngFor="let item of persona.experiencia">{{ item }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

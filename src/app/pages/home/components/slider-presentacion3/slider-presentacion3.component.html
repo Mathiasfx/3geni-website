@@ -1,0 +1,11 @@
+<div class="eventos-container">
+  <div class="content-wrapper">
+    <div class="grid-container">
+      <div class="grid-item" *ngFor="let evento of eventos">
+        <div class="image-container">
+          <img [src]="evento.src" [alt]="evento.alt">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
