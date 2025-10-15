@@ -1,0 +1,279 @@
+@import '../../../../../styles/variables';
+
+// Sección Servicios
+.servicios-section {
+  padding: 6rem 0;
+  background-color: $light-bg;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .servicios-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: $purple-dark;
+    font-family: $font-heading;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: $purple-dark;
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+  }
+  
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+  }
+  
+  .servicio-card {
+    background: #EDEAF4;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(84, 56, 132, 0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(84, 56, 132, 0.15);
+    }
+    
+    .servicio-image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      background: #EDEAF4;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      
+      &:hover img {
+        transform: scale(1.05);
+      }
+    }
+    
+    .servicio-content {
+      padding: 2rem;
+      
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: $purple-dark;
+        margin-bottom: 1.5rem;
+        font-family: $font-heading;
+        text-align: center;
+      }
+      
+      .servicios-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          padding: 0.8rem 0;
+          color: #4a5568;
+          font-size: 1rem;
+          line-height: 1.6;
+          position: relative;
+          padding-left: 1.5rem;
+          
+          &::before {
+            content: '•';
+            color: $purple;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: 0.8rem;
+          }
+          
+          &:hover {
+            color: #2d3748;
+            transform: translateX(5px);
+            transition: all 0.2s ease;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: $breakpoint-md) {
+  .servicios-section {
+    padding: 4rem 0;
+    
+    .servicios-title {
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .servicios-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .servicio-card {
+      .servicio-image {
+        height: 300px;
+      }
+      
+      .servicio-content {
+        padding: 1.5rem;
+        
+        h3 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+        
+        .servicios-list li {
+          font-size: 0.95rem;
+          padding: 0.6rem 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .servicios-section {
+    .container {
+      padding: 0 1rem;
+    }
+    
+    .servicios-title {
+      font-size: 1.8rem;
+    }
+    
+    .servicio-card {
+      .servicio-content {
+        padding: 1.2rem;
+        
+        h3 {
+          font-size: 1.3rem;
+        }
+        
+        .servicios-list li {
+          font-size: 0.9rem;
+        }
+      }
+      
+      .servicio-image {
+        height: 280px;
+      }
+    }
+  }
+}
+
+// Sección Gamificación
+.gamificacion-section {
+  padding: 6rem 0;
+  background-color: #EDEAF4;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .gamificacion-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: $primary;
+    font-family: $font-heading;
+    line-height: 1.2;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: $primary;
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+  }
+  
+  .gamificacion-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .gamificacion-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+    
+    .gamificacion-paragraph {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #2d3748;
+      margin: 0;
+      text-align: justify;
+      font-family: $font-body;
+      font-weight: 400;
+    }
+  }
+}
+
+// Responsive para Gamificación
+@media (max-width: $breakpoint-md) {
+  .gamificacion-section {
+    padding: 4rem 0;
+    
+    .gamificacion-title {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .gamificacion-text {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      
+      .gamificacion-paragraph {
+        font-size: 1rem;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .gamificacion-section {
+    padding: 3rem 0;
+    
+    .container {
+      padding: 0 1rem;
+    }
+    
+    .gamificacion-title {
+      font-size: 1.8rem;
+    }
+    
+    .gamificacion-text {
+      gap: 1.5rem;
+      
+      .gamificacion-paragraph {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
