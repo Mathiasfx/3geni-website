@@ -1,0 +1,95 @@
+@import '../../../../../styles/variables';
+
+.slider-presentacion4-container {
+  width: 100%;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+
+  .images-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
+    width: 100%;
+
+    @media (max-width: $breakpoint-md) {
+      grid-gap: 0;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+    }
+
+    .image-left,
+    .image-right {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 0;
+      box-shadow: none;
+      transition: none;
+
+      &:hover {
+        transform: none;
+        box-shadow: none;
+      }
+
+      .image-container {
+        width: 100%;
+        height: 0;
+        padding-bottom: 75%; // Proporción 4:3 para mejor ajuste a las imágenes
+        position: relative;
+
+        .img-responsive {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+
+  .image-bottom {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: none;
+    transition: none;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .image-container {
+      width: 100%;
+      height: 0;
+      padding-bottom: 37.5%; // Proporción 8:3 para imagen que ocupa dos columnas
+      position: relative;
+
+      .img-responsive {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
