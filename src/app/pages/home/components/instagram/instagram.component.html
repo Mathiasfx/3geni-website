@@ -1,0 +1,50 @@
+<div class="instagram-container">
+  <div class="content-wrapper">
+    <!-- Grid de posts de Instagram -->
+    <div class="instagram-grid" *ngIf="instagramPosts && instagramPosts.length > 0">
+      <div class="instagram-post" *ngFor="let post of instagramPosts" (click)="openPost(post.permalink)">
+        <div class="post-image-container">
+          <img [src]="post.media_url" [alt]="post.caption" class="post-image" loading="lazy">
+          <div class="post-overlay">
+            <div class="post-stats">
+              <span class="likes" *ngIf="post.like_count">
+                <i class="heart-icon">♥</i>
+                {{ formatNumber(post.like_count) }}
+              </span>
+              <span class="comments" *ngIf="post.comments_count">
+                <i class="comment-icon">💬</i>
+                {{ formatNumber(post.comments_count) }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid de placeholders mientras no hay integración -->
+    <div class="instagram-grid" *ngIf="!instagramPosts || instagramPosts.length === 0">
+      <div class="instagram-post placeholder" *ngFor="let placeholder of placeholderPosts" (click)="openInstagramProfile()">
+        <div class="post-image-container">
+          <img [src]="placeholder.image" [alt]="placeholder.alt" class="post-image">
+          <div class="post-overlay">
+            <div class="placeholder-icon">
+              <i class="instagram-icon">📷</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mensaje cuando no hay posts -->
+    <div class="no-posts-message" *ngIf="showNoPostsMessage">
+      <p>¡Síguenos en Instagram para ver nuestras últimas actualizaciones!</p>
+    </div>
+
+    <!-- Botón de seguir en Instagram al final -->
+    <div class="instagram-button-container">
+      <a href="https://www.instagram.com/gen3i_oficial/" target="_blank" rel="noopener noreferrer" class="instagram-button">
+        <img src="assets/img/botoninstagram.png" alt="Seguinos en Instagram" class="boton-instagram">
+      </a>
+    </div>
+  </div>
+</div>
