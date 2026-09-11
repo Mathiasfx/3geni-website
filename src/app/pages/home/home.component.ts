@@ -8,11 +8,12 @@ import { QuienesSomosComponent } from "./components/quienes-somos/quienes-somos.
 import { ServiciosComponent } from "./components/servicios/servicios.component";
 import { ProtagonistasComponent } from "./components/protagonistas/protagonistas.component";
 import { InstagramComponent } from "./components/instagram/instagram.component";
+import { PopupIniciativaComponent } from './components/popup-iniciativa/popup-iniciativa.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [SliderPresentacion1Component, SliderPresentacion2Component, SliderPresentacion3Component, SliderPresentacion4Component, CasosExitoComponent, QuienesSomosComponent, ServiciosComponent, ProtagonistasComponent, InstagramComponent],
+  imports: [SliderPresentacion1Component, SliderPresentacion2Component, SliderPresentacion3Component, SliderPresentacion4Component, CasosExitoComponent, QuienesSomosComponent, ServiciosComponent, ProtagonistasComponent, InstagramComponent, PopupIniciativaComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
