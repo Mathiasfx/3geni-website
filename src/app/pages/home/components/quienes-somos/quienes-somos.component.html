@@ -61,7 +61,7 @@
       </div>
 
       <!-- Resto del equipo -->
-      <div class="miembro" *ngFor="let persona of equipo.slice(2)">
+      <div class="miembro" *ngFor="let persona of equipo.slice(2); let last = last" [class.ultimo-impar]="last && equipo.slice(2).length % 2 !== 0">
         <div class="foto-container">
           <img [src]="persona.foto" [alt]="persona.nombre">
           <div class="decoracion">
@@ -75,7 +75,11 @@
           <h3 class="nombre">{{ persona.nombre }}</h3>
           <h4 class="cargo">{{ persona.cargo }}</h4>
 
-          <p class="descripcion">{{ persona.descripcion }}</p>
+          <a *ngIf="persona.linkedin" [href]="persona.linkedin" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+            <img src="assets/img/icon-linkedin.png" alt="LinkedIn de {{ persona.nombre }}">
+          </a>
+
+          <p class="descripcion" *ngIf="persona.descripcion">{{ persona.descripcion }}</p>
 
           <div class="formacion" *ngIf="persona.formacion && persona.formacion.length > 0">
             <p *ngFor="let item of persona.formacion">{{ item }}</p>

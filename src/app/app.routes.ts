@@ -7,9 +7,11 @@ export const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent }
+      { path: '', component: HomeComponent },
+      { path: 'home', redirectTo: '', pathMatch: 'full' }
     ]
-  }
+  },
+  // Wildcard route - debe ir al final
+  { path: '**', redirectTo: '' }
 ];
 

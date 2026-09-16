@@ -93,6 +93,12 @@
         grid-column: span 1; // En móvil ocupa una columna
       }
     }
+
+    .miembro.ultimo-impar {
+      grid-column: 1 / -1;
+      justify-self: center;
+      max-width: 450px;
+    }
   }
 
   .miembro {
@@ -328,11 +334,14 @@
       margin-bottom: 1rem;
       margin-left: auto;
       margin-right: auto;
+      overflow: hidden;
+      border-radius: 50%;
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center top;
         border-radius: 50%;
         position: relative;
         z-index: 1;
@@ -404,12 +413,27 @@
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 1px;
-        margin: 0 0 1rem;
+        margin: 0 0 0.5rem;
         color: $yellow;
 
         @media (max-width: $breakpoint-md) {
           font-size: 1.1rem;
           text-align: center;
+        }
+      }
+
+      .linkedin-link {
+        display: inline-block;
+        margin-bottom: 1rem;
+
+        img {
+          width: 24px;
+          height: 24px;
+          display: block;
+        }
+
+        &:hover {
+          opacity: 0.85;
         }
       }
 
