@@ -53,5 +53,14 @@ export class QuienesSomosComponent {
       formacion: ['lic. en Tecnologia de la Información y Comunicación (UNAF)'],
       experiencia: [],
     },
+    {
+      nombre: 'Maria Emilia Ferreyra',
+      cargo: 'COORDINADORA DE PROYECTOS',
+      foto: 'assets/img/emilia.jpg',
+      descripcion: '',
+      formacion: [],
+      experiencia: [],
+      linkedin: 'https://www.linkedin.com/in/emilia-ferreyra/',
+    },
   ];
 }
